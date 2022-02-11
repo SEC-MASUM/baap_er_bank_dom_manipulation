@@ -18,6 +18,20 @@ depositButton.addEventListener("click", function () {
     const totalDeposit = previousDepositAmount + depositAmount;
     previousDeposit.innerText = totalDeposit;
     // console.log("Total Deposit", totalDeposit);
+
+    //Clear Deposit Input Field
+    depositInputField.value = "";
+
+    //Balance Calculation After Deposit
+    const previousBalance = document.getElementById("balance");
+    const previousBalanceText = previousBalance.innerText;
+    const previousBalanceAmount = parseFloat(previousBalanceText);
+    // console.log("Previous Balance:", previousBalanceAmount);
+
+    //Current Balance
+    const currentBalance = previousBalanceAmount + depositAmount;
+    previousBalance.innerText = currentBalance;
+    // console.log("TCurrent Balance After Deposit", currentBalance);
   }
 });
 
@@ -41,5 +55,19 @@ withdrawButton.addEventListener("click", function () {
     const totalWithdraw = previousWithdrawAmount + withdrawAmount;
     previousWithdraw.innerText = totalWithdraw;
     // console.log("Total Withdraw",totalWithdraw);
+
+    //Clear Withdraw Input Field
+    withdrawInputField.value = "";
+
+    //Balance Calculation After Withdraw
+    const previousBalance = document.getElementById("balance");
+    const previousBalanceText = previousBalance.innerText;
+    const previousBalanceAmount = parseFloat(previousBalanceText);
+    // console.log("Previous Balance:", previousBalanceAmount);
+
+    //Current Balance
+    const currentBalance = previousBalanceAmount - withdrawAmount;
+    previousBalance.innerText = currentBalance;
+    // console.log("Current Balance After Withdraw", currentBalance);
   }
 });
